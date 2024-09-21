@@ -1,0 +1,51 @@
+// Set current year in the footer
+const yearSpan = document.getElementById('currentyear');
+const currentYear = new Date().getFullYear();
+yearSpan.textContent = currentYear;
+
+// Set the last modified date in the footer
+const lastModifiedSpan = document.getElementById('lastModified');
+lastModifiedSpan.textContent = `Last Modified: ${document.lastModified}`;
+
+// Course List Array
+const courses = [
+    { name: "WDD 230 - Web Frontend Development", credits: 3, type: "WDD", completed: false },
+    { name: "WDD 331 - Advanced CSS", credits: 3, type: "WDD", completed: true },
+    { name: "CSE 121b - JavaScript", credits: 3, type: "CSE", completed: true },
+    { name: "CSE 210 - Programming", credits: 3, type: "CSE", completed: false }
+];
+
+// Display courses
+function displayCourses(filteredCourses) {
+    const container = document.getElementById('courses-container');
+    container.innerHTML = ''; // Clear previous content
+
+    filteredCourses.forEach(course => {
+        const courseElement = document.createElement('div');
+        courseElement.className = 'course';
+        courseElement.style.backgroundColor = course.completed ? '#a8e6cf' : '#ffccbc';
+        courseElement.innerHTML = `
+            <h3>${course.name}</h3>
+            <p>Credits: ${course.credits}</p>
+        `;
+        container.appendChild(courseElement);
+    });
+}
+
+// Filter courses
+function filterCourses(type) {
+    let filteredCourses;
+    if (type === 'all') {
+        filteredCourses = courses;
+    } else {
+        filteredCourses = courses.filter(course => course.type === type);
+    }
+    displayCourses(filteredCourses);
+}
+
+// Calculate and display total credits
+const totalCredits = courses.reduce((total, course) => total + course.credits, 0);
+document.getElementById('total-credits').textContent = `Total Credits: ${totalCredits}`;
+
+// Initial display of all courses
+filterCourses('all');
