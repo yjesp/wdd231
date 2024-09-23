@@ -1,60 +1,115 @@
 /* General Styles */
 body {
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    line-height: 1.6;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  line-height: 1.6;
 }
 
 header {
-    background-color: #333;
-    color: #fff;
-    padding: 1em;
-    text-align: center;
+  background-color: #333;
+  color: #fff;
+  padding: 1em;
+  text-align: center;
+}
+
+nav {
+  background-color: #444;
 }
 
 nav ul {
-    display: flex;
-    justify-content: center;
-    list-style-type: none;
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
 
 nav ul li {
-    margin: 0 1em;
+  margin: 0 1em;
 }
 
 nav ul li a {
-    color: #fff;
-    text-decoration: none;
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5em 1em;
+  display: block;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effect */
+nav ul li a:hover {
+  background-color: #666;
+  color: #fff;
+}
+
+/* Active class for wayfinding */
+nav ul li a.active {
+  background-color: #555;
+  font-weight: bold;
 }
 
 main {
-    padding: 2em;
-    max-width: 1000px;
-    margin: auto;
+  padding: 2em;
+  max-width: 1000px;
+  margin: auto;
 }
 
 section {
-    margin-bottom: 2em;
+  margin-bottom: 2em;
 }
 
 footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 1em;
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 1em;
 }
 
 button {
-    margin-right: 10px;
-    padding: 0.5em 1em;
-    cursor: pointer;
+  margin-right: 10px;
+  padding: 0.5em 1em;
+  cursor: pointer;
+}
+
+/* Course Card Styles */
+#courses-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.course {
+  width: 45%;
+  margin-bottom: 1em;
+  padding: 1em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.course.completed {
+  background-color: #a8e6cf;
+}
+
+.course.incomplete {
+  background-color: #ffccbc;
 }
 
 /* Responsive Navigation */
 @media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-    }
+  nav ul {
+      flex-direction: column;
+      align-items: center;
+  }
 }
+
+/* Small-Screen Hamburger Navigation */
+nav ul li {
+  display: inline-block;
+}
+
+button {
+  margin-top: 10px;
+}
+

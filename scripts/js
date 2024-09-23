@@ -9,10 +9,11 @@ lastModifiedSpan.textContent = `Last Modified: ${document.lastModified}`;
 
 // Course List Array
 const courses = [
-    { name: "WDD 230 - Web Frontend Development", credits: 3, type: "WDD", completed: false },
+    { name: "WDD 230 - Web Frontend Development", credits: 3, type: "WDD", completed: true },
     { name: "WDD 331 - Advanced CSS", credits: 3, type: "WDD", completed: true },
     { name: "CSE 121b - JavaScript", credits: 3, type: "CSE", completed: true },
-    { name: "CSE 210 - Programming", credits: 3, type: "CSE", completed: false }
+    { name: "CSE 210 - Programming", credits: 3, type: "CSE", completed: false },
+    { name: "WDD 241 - Web Backend Development", credits: 3, type: "WDD", completed: false }
 ];
 
 // Display courses
@@ -22,8 +23,7 @@ function displayCourses(filteredCourses) {
 
     filteredCourses.forEach(course => {
         const courseElement = document.createElement('div');
-        courseElement.className = 'course';
-        courseElement.style.backgroundColor = course.completed ? '#a8e6cf' : '#ffccbc';
+        courseElement.className = `course ${course.completed ? 'completed' : 'incomplete'}`;
         courseElement.innerHTML = `
             <h3>${course.name}</h3>
             <p>Credits: ${course.credits}</p>
