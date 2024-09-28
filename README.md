@@ -1,48 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Chamber of Commerce Directory Page">
+    <meta name="description" content="Course home page for Web and Computer Programming certificate">
     <meta name="author" content="Your Name">
-    <meta property="og:title" content="Chamber of Commerce Directory">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="images/chamber-logo.png">
-    <meta property="og:url" content="https://yourdomain.com/chamber/directory.html">
-    <title>Chamber Directory</title>
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="css/styles.css">
-    <script src="js/script.js" defer></script>
+    <title>WDD 231 - Course Home Page</title>
+    <link rel="stylesheet" href="./css/styles.css"> <!-- 경로를 명확히 설정 -->
+    <script src="./js/script.js" defer></script>
 </head>
-
 <body>
     <header>
-        <h1>Chamber of Commerce Directory</h1>
+        <h1>Course Home Page</h1>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="directory.html" class="active">Directory</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="chamber.html">Chamber</a></li>
+                <li><a href="https://github.com/yourgithubusername" target="_blank">GitHub Profile</a></li>
+                <li><a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section id="view-toggle">
-            <button id="grid-view">Grid View</button>
-            <button id="list-view">List View</button>
+        <section>
+            <h2>Certificate Overview</h2>
+            <p>This section describes the Web and Computer Programming certificate.</p>
         </section>
-        <section id="directory">
-            <div id="members-container"></div>
+
+        <section id="course-list">
+            <h2>Course List</h2>
+            <button onclick="filterCourses('all')">All Courses</button>
+            <button onclick="filterCourses('WDD')">WDD Courses</button>
+            <button onclick="filterCourses('CSE')">CSE Courses</button>
+            <div id="courses-container"></div>
+        </section>
+
+        <section>
+            <h2>Total Credits</h2>
+            <p id="total-credits"></p>
         </section>
     </main>
 
     <footer>
-        <p>&copy; <span id="currentyear"></span> Your Name, Your City/State</p>
+        <p>&copy; <span id="currentyear"></span> Your Name, Your State/Country</p>
         <p id="lastModified"></p>
     </footer>
 </body>
-
 </html>
