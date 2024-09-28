@@ -1,0 +1,26 @@
+[
+    {
+        "name": "ABC Corp",
+        "address": "123 Main St, Cityville",
+        "phone": "123-456-7890",
+        "website": "https://www.abccorp.com",
+        "image": "abc-logo.png",
+        "membership": 3
+    },
+    {
+        "name": "XYZ Services",
+        "address": "456 Elm St, Townsville",
+        "phone": "987-654-3210",
+        "website": "https://www.xyzservices.com",
+        "image": "xyz-logo.png",
+        "membership": 2
+    },
+    {
+        "name": "Tech Solutions",
+        "address": "789 Oak St, Villagetown",
+        "phone": "555-123-4567",
+        "website": "https://www.techsolutions.com",
+        "image": "tech-logo.png",
+        "membership": 1
+    }
+]
